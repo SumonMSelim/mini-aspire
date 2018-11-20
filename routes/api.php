@@ -14,4 +14,8 @@
 Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
     Route::post('/register', 'AuthController@register');
     Route::post('/login', 'AuthController@login');
+
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('/profile', 'AuthController@profile');
+    });
 });

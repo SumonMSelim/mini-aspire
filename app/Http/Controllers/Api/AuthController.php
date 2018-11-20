@@ -66,4 +66,11 @@ class AuthController extends Controller
 
         return $this->respondWithError('Data validation failed.', $response);
     }
+
+    public function profile()
+    {
+        $user = auth()->user();
+
+        return $this->respondWithSuccess('User profile loaded.', ['user' => UserResource::make($user)]);
+    }
 }
