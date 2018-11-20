@@ -17,3 +17,5 @@ The task is defined below:
 ## Third-party Packages Used
 
 - [Laravel Passport](https://laravel.com/docs/passport)
+- [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
+- [Laravel Debug Bar](https://github.com/barryvdh/laravel-debugbar)
