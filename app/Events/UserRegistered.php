@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -14,7 +14,7 @@ class UserRegistered
     /**
      * Create a new event instance.
      *
-     * @param \App\User $user
+     * @param \App\Models\User $user
      */
     public function __construct(User $user)
     {
