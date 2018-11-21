@@ -17,7 +17,7 @@ class CreateLoansTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->decimal('requested_amount', 11, 2);
-            $table->string('currency', 8)->default('SGD')->comment('');
+            $table->string('currency', 8)->default('SGD')->comment('SGD or THB');
             $table->tinyInteger('loan_tenor')->comment('Unit: month');
             $table->string('repayment_frequency', 16)->default('Monthly');
             $table->decimal('origination_fee_percentage', 3, 2)->comment('one-time ranging from 1% to 6% fee');
