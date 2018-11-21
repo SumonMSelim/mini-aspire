@@ -36,8 +36,9 @@ class RepaymentsController extends Controller
                     $total_interest = $loan->approved_amount * ($loan->interest_rate * $loan->loan_tenor / 100);
                     $total_amount_repayable = $loan->approved_amount + $total_interest;
                     $monthly_total_repayment = number_format($total_amount_repayable / $loan->loan_tenor, 2, '.', '');
+                    $repayment_amount = number_format($data['repayment_amount'], 2, '.', '');
 
-                    if ($monthly_total_repayment === (string)$data['repayment_amount']) {
+                    if ($monthly_total_repayment === $repayment_amount) {
                         $repayment = $loan->repayments()->create($data);
                         event(new RepaymentCreated($repayment));
 
