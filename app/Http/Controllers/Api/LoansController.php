@@ -54,4 +54,11 @@ class LoansController extends Controller
 
         return $this->respondWithSuccess('Loan history loaded.', ['loans' => LoanResource::collection($loans)]);
     }
+
+    public function show($id)
+    {
+        $loan = Loan::with('user', 'repayments')->findOrFail($id);
+
+        return $this->respondWithSuccess('Loan loaded.', ['loan' => LoanResource::make($loan)]);
+    }
 }

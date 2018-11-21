@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\Repayment as RepaymentResource;
 use App\Models\Loan as LoanModel;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -39,6 +40,7 @@ class Loan extends JsonResource
             'total_amount_repayable' => number_format($total_amount_repayable, 2),
             'monthly_total_repayment' => number_format($monthly_total_repayment, 2),
             'status' => $status[$this->status],
+            'repayments' => RepaymentResource::collection($this->whenLoaded('repayments')),
         ];
     }
 }
