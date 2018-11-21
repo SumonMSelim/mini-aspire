@@ -18,6 +18,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
     Route::group(['middleware' => 'auth:api'], function () {
         Route::get('/profile', 'AuthController@profile');
 
-        Route::get('/loans/create', 'LoansController@create');
+        Route::post('/loans/create', 'LoansController@create');
     });
 });
