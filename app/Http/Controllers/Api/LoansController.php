@@ -47,4 +47,11 @@ class LoansController extends Controller
 
         return $this->respondWithError('Data validation failed.', $response);
     }
+
+    public function index()
+    {
+        $loans = Loan::where('user_id', auth()->user()->id)->paginate(10);
+
+        return $this->respondWithSuccess('Loan history loaded.', ['loans' => LoanResource::collection($loans)]);
+    }
 }

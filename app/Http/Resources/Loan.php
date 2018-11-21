@@ -34,7 +34,7 @@ class Loan extends JsonResource
             'loan_tenor' => $this->loan_tenor . ' ' . str_plural('month', $this->loan_tenor),
             'origination_fee_percentage' => $this->origination_fee_percentage,
             'interest_rate' => $this->interest_rate,
-            'disbursed_amount' => $this->disbursed_amount,
+            'disbursed_amount' => number_format($this->disbursed_amount, 2),
             'total_interest' => number_format($total_interest, 2),
             'total_amount_repayable' => number_format($total_amount_repayable, 2),
             'monthly_total_repayment' => number_format($monthly_total_repayment, 2),

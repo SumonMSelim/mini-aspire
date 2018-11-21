@@ -19,5 +19,6 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
         Route::get('/profile', 'AuthController@profile');
 
         Route::post('/loans/create', 'LoansController@create');
+        Route::get('/loans', 'LoansController@index');
     });
 });
