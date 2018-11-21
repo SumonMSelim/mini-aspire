@@ -52,28 +52,31 @@ namespace App\Models{
  *
  * @property int $id
  * @property int $user_id
- * @property float $requested_amount Between SGD$5,000 to SGD$100,000
- * @property string $loan_tenor 1 month to 6 months
+ * @property float $approved_amount
+ * @property string $currency SGD or THB
+ * @property int $loan_tenor Unit: month
  * @property string $repayment_frequency
- * @property int $origination_fee_percentage one-time ranging from 1% to 6% fee
- * @property int $interest_rate Between 1.5% to 4% per month
+ * @property float $origination_fee_percentage one-time ranging from 1% to 6% fee
+ * @property float $interest_rate Between 1.5% to 4% per month
  * @property float $disbursed_amount requested amount - origination fee
- * @property string $status
+ * @property int $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Repayment[] $repayments
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereApprovedAmount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereCurrency($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereDisbursedAmount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereInterestRate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereLoanTenor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereOriginationFeePercentage($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereRepaymentFrequency($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereRequestedAmount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Loan whereUserId($value)
@@ -90,7 +93,7 @@ namespace App\Models{
  * @property int $loan_id
  * @property float $repayment_amount
  * @property string $repayment_method Internet Banking Transfer, PayNow, Cheques, ATM Transfers, Cash Deposit
- * @property string $paid_at
+ * @property \Illuminate\Support\Carbon $paid_at
  * @property-read \App\Models\Loan $loan
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read \App\Models\User $user
