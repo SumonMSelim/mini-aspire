@@ -17,7 +17,7 @@ class CreateRepaymentsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('loan_id');
-            $table->decimal('repayment_amount', 8, 2);
+            $table->decimal('repayment_amount', 11, 2);
             $table->string('repayment_method', 64)->comment('Internet Banking Transfer, PayNow, Cheques, ATM Transfers, Cash Deposit');
             $table->timestamp('paid_at');
             $table->foreign('user_id')->references('id')->on('users');
