@@ -24,9 +24,9 @@ class Repayment extends JsonResource
             'total_amount_repayable' => number_format($total_amount_repayable, 2),
             'monthly_total_repayment' => number_format($monthly_total_repayment, 2),
             'currency' => $this->loan->currency,
-            'repayment_method' => $this->loan->repayment_method,
+            'repayment_method' => $this->repayment_method,
             'loan_tenor' => $this->loan->loan_tenor . ' ' . str_plural('month', $this->loan->loan_tenor),
-            'tenor_paid' => $this->loan->repayments()->count(),
+            'repayment_paid' => $this->loan->repayments()->count(),
         ];
     }
 }
