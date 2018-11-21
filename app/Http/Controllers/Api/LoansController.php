@@ -50,7 +50,7 @@ class LoansController extends Controller
 
     public function index()
     {
-        $loans = Loan::where('user_id', auth()->user()->id)->paginate(10);
+        $loans = Loan::with('user')->where('user_id', auth()->user()->id)->paginate(10);
 
         return $this->respondWithSuccess('Loan history loaded.', ['loans' => LoanResource::collection($loans)]);
     }
