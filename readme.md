@@ -10,9 +10,13 @@ The task is defined below:
 
 ## Installation Instructions
 
-- Clone the project
 - Run `composer install`
 - Run `php artisan migrate`
+- Run `php artisan passport:install`
+
+## API Documentation
+
+- [Postman Collection](https://www.getpostman.com/collections/1865a4ef920033776cef)
 
 ## Third-party Packages Used
 
