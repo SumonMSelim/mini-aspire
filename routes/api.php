@@ -20,5 +20,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
 
         Route::post('/loans/create', 'LoansController@create');
         Route::get('/loans', 'LoansController@index');
+
+        Route::post('/repayments/create', 'RepaymentsController@create');
     });
 });
