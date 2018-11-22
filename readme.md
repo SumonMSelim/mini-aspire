@@ -26,3 +26,7 @@ The task is defined below:
 - [Laravel Passport](https://laravel.com/docs/passport)
 - [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper)
 - [Laravel Debug Bar](https://github.com/barryvdh/laravel-debugbar)
+
+## TODO
+
+- Rewrite codebase following Service-Repository Pattern
